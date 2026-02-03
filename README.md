@@ -22,7 +22,7 @@ Static website files (index.html, style.css, etc.)
 
 ## 🚀 Step-by-Step Implementation
 
-Step 1: Launch an EC2 Instance
+## Step 1: Launch an EC2 Instance
 
 Log in to AWS Management Console
 
@@ -44,11 +44,11 @@ Allow SSH (22) from your IP
 
 Allow HTTP (80) from Anywhere
 
-Step 2: Connect to EC2 Instance
+## Step 2: Connect to EC2 Instance
 
 ssh -i your-key.pem ec2-user@<EC2-PUBLIC-IP>
 
-Step 3: Install Web Server (Apache)
+## Step 3: Install Web Server (Apache)
 
 sudo yum update -y
 sudo yum install httpd -y
