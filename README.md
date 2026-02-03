@@ -29,13 +29,19 @@ NGINX serves static content from /var/www/html
 # Production-Style Architecture Diagram
 ```mermaid
 
-flowchart LR
-    U[User Browser] -->|HTTP / HTTPS| I[Internet]
-    I --> P[Public IP / DNS]
-    P --> SG[Security Group]
-    SG --> EC2[EC2 Instance]
-    EC2 --> NGINX[NGINX Web Server]
-    NGINX --> WEB[Static Website Files<br/>/var/www/html]
+flowchart TB
+    User[User Browser]
+    DNS[Public DNS / Elastic IP]
+    SG[Security Group<br/>Port 80 / 443]
+    EC2[EC2 Instance]
+    NGINX[NGINX Service]
+    Files[Static Content<br/>HTML / CSS / JS]
+
+    User --> DNS
+    DNS --> SG
+    SG --> EC2
+    EC2 --> NGINX
+    NGINX --> Files
 
 ```
 
