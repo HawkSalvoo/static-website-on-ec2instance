@@ -42,31 +42,6 @@ flowchart TB
     SG --> EC2
     EC2 --> NGINX
     NGINX --> Files
-
-+---------------+
-|   User        |
-|  Browser      |
-+-------+-------+
-        |
-        | HTTP / HTTPS
-        v
-+-------------------+
-| EC2 Public IP     |
-| / Public DNS      |
-+---------+---------+
-          |
-          v
-+-------------------+
-| Security Group    |
-| Port 80 / 443     |
-+---------+---------+
-          |
-          v
-+-------------------+
-| EC2 Instance      |
-|  - NGINX          |
-|  - Static Files   |
-+-------------------+
 ```
 
 # ⚙️ Implementation Steps
