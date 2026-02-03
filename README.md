@@ -1,2 +1,57 @@
 # static-website-on-ec2instance
-Hosting a static website on an EC2 instance in AWS to serve HTML, CSS, and JavaScript files over the internet. You launch an EC2 instance, install a web server like Apache or Nginx, upload your static website files to the server’s web directory. Once set up, users can access the website using the EC2 instance’s public IP.
+# Hosting a Static Website on AWS EC2
+
+## 📌 Overview
+This guide explains how to host a **static website** (HTML, CSS, JavaScript) on an **AWS EC2 instance** using a web server such as **Apache** or **Nginx**.  
+It is suitable for learning purposes, interviews, and small-scale deployments.
+
+---
+
+## 🏗️ Architecture Diagram
+
+### High-Level Architecture
+```mermaid
+flowchart TD
+    User[User Browser] -->|HTTP Request| Internet
+    Internet -->|Port 80| EC2[EC2 Instance]
+    EC2 --> WebServer[Apache / Nginx]
+    WebServer --> Website[Static Website Files]
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🧰 Prerequisites
+
+AWS Account
+
+Basic Linux commands
+
+SSH client
+
+Static website files (index.html, style.css, etc.)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚀 Step-by-Step Implementation
+Step 1: Launch an EC2 Instance
+
+Log in to AWS Management Console
+
+Navigate to EC2 → Launch Instance
+
+Choose an AMI:
+
+Amazon Linux 2 (recommended)
+
+Select instance type:
+
+t2.micro (Free Tier)
+
+Create or select a Key Pair
+
+Configure Security Group:
+
+Allow SSH (22) from your IP
+
+Allow HTTP (80) from Anywhere
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
