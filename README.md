@@ -46,59 +46,17 @@ Allow HTTP (80) from Anywhere
 
 ## Step 2: Connect to EC2 Instance
 
-ssh -i your-key.pem ec2-user@<EC2-PUBLIC-IP>
+```
+ssh -i your-key.pem ec2-user@<EC2_PUBLIC_IP>
+```
 
 ## Step 3: Install Web Server (Apache)
 
+```
 sudo yum update -y
 sudo yum install httpd -y
 sudo systemctl start httpd
 sudo systemctl enable httpd
-
-# Example 1
-
-
-```#!/bin/sh
-
-# display the file name
-echo "The name of the script file is $0"
-
-# display total number of arguments passed to the script
-echo "Total number of arguments passed to the script = $#"
-
-# display all the arguments using for loop
-if [ $# -gt 0 ]
-then
-  
-  echo "List of arguments:"
-  for arg in $@
-  do
-    echo "$arg"
-  done
-
-else
-  
-  echo "No argument provided to the script."
-
-fi 
-
-Output:
-
-$ sh example.sh 
-The name of the script file is example.sh
-Total number of arguments passed to the script = 0
-No argument provided to the script.
-
-
-$ sh example.sh Hello World! What's up ?
-The name of the script file is example.sh
-Total number of arguments passed to the script = 5
-List of arguments:
-Hello
-World
-WWhat's
-up
-?
 ```
 
 
