@@ -69,12 +69,13 @@ sudo systemctl enable nginx
 ```
 cd /usr/share/nginx/html
 sudo rm -rf *
-sudo vi index.html
+unzip demo-template.zip
+cp -r demo-template/* /var/www/html/
 ```
 ## 4️⃣ Access Website
 
 ```
-
+https://<EC2_PUBLIC_IP>
 ```
 ## 📁 Directory Structure
 
