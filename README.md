@@ -59,7 +59,7 @@ Attach Security Group with HTTP & SSH access
 
 ```
 sudo yum update -y
-sudo amazon-linux-extras install nginx1 -y
+sudo yum install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
@@ -67,7 +67,7 @@ sudo systemctl enable nginx
 ## 3️⃣ Deploy Static Website
 
 ```
-cd /usr/share/nginx/html
+cd /var/www/html
 sudo rm -rf *
 unzip demo-template.zip
 cp -r demo-template/* /var/www/html/
